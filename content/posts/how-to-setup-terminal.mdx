@@ -1,15 +1,85 @@
 ---
-title: "How To Setup Your Mac Terminal"
+title: "💻 How To Setup Your Mac Terminal"
 slug: "terminal-setup"
 publishedAt: "2022-10-03"
-excerpt: "Customize your terminal using Brew, Zsh, Starship and more."
+excerpt: "Customize your terminal to be more productive and well look!"
 categories: ["terminal", "mac"]
 ---
 
-## Install Homebrew
+When we are working everyday with the terminal of our computer, sometimes we want to customize our terminal to be more about ourselves and be really worth it when we need to use it.
 
-Open a terminal and run:
+In this post. We are going to customize our current mac terminal by using **Oh My Zsh** and **PowerLevel10K**. I found this tutorial on YouTube some time ago, so all the credits goes for this guy: https://www.josean.com/posts/terminal-setup
+
+## Prerequisites:
+
+* Homebrew
+* Git
+* Visual Studio Code
+
+## Install Oh My Zsh
+
+Open Terminal, copy and paste this code to install Oh My Zsh:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+## Install PowerLevel10K for Oh My Zsh
+
+Copy and paste this code to install PowerLevel10K
+
+```bash
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+```
+
+Then, open the file "~/.zshrc" on your VSCode with:
+
+> You need to enable the use of 'code' keyword on your computer to access the file and modified.
+
+```bash
+code ~/.zshrc
+```
+
+After access the file. You need to modify the value of ZSH_THEME as shown in this:
+
+```bash
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
+Run this command to activate this changes.
+
+```bash
+source ~/.zshrc
+```
+
+## Start configuring your terminal.
+
+After activate your changes, you will see on your terminal the wizard to start customize your terminal. **Please** if you see the first three figures you must be clear in order to start customizing your terminal. In this context everybody can set their own colors, theme, etc. So the only thing I suggest you to activate is 'Verbose'.
+
+## EXTRA: Useful ZSH Plugins
+
+zsh-autosuggestions:
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+zsh-syntax-highlight:
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+Once you cloned the plugins, open again '~/.zshrc' file with VSCode and modify the plugins as you see below:
+
+```bash
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+```
+
+Load the changes on the file with:
+```bash
+source ~/.zshrc
+```
+
+And that's how you can personalize your terminal!
+
+You can also follow the steps on this [video](https://www.youtube.com/watch?v=CF1tMjvHDRA).
