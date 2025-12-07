@@ -18,7 +18,9 @@ export default function PostCard({ post }: Props) {
         <div className="flex justify-between items-start mb-2">
           <h2 className="text-xl font-semibold pr-4">{post.title}</h2>
           {post.publishedAt && (
-            <p className="text-xs text-gray-500 whitespace-nowrap">{post.publishedAt}</p>
+            <p className="text-xs text-gray-500 whitespace-nowrap">
+              {post.publishedAt}
+            </p>
           )}
         </div>
         <p className="text-sm text-gray-400">{post.excerpt}</p>
