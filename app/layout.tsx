@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,10 +29,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        {/* Header component displayed at the top of every page */}
         <Header />
-        <div className="pt-20">{children}</div>
+
+        {/* Main content area with padding-top to account for fixed header */}
+        <div className="pt-20 grow">{children}</div>
+
+        {/* Footer component displayed at the bottom of every page */}
+        {/* To implement a component in the layout:
+            1. Import it at the top of the file
+            2. Place it inside the <body> tag where you want it to appear
+            3. It will automatically render on all pages that use this layout
+        */}
+        <Footer />
       </body>
     </html>
   );

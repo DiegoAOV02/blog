@@ -1,7 +1,7 @@
 ## Requisites
 
-* **Node** (recent vesion)
-* **pnpm** (package manager for Node)
+- **Node** (recent vesion)
+- **pnpm** (package manager for Node)
 
 ## Set Up
 
