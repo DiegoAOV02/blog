@@ -18,7 +18,7 @@ make install
 ## TODO
 
 - Create a section to display other projects.
-- Enhance the `Posts` section to display better the MDX format for the posts.
+- ~~Enhance the `Posts` section to display better the MDX format for the posts.~~
 - Complete the `About` section with my personal info.
 - Implement more animations and stuffs to the page.
 - Find a way to write posts on the page without accessing to VSCode and create the MDX file by myself.
