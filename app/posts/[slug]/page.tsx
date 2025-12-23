@@ -31,20 +31,22 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 const mdxComponents: MDXRemoteProps["components"] = {
   // Custom <h1> for MDX "# Title"
   h1: (props) => (
-    <h1 {...props} className="text-4xl font-bold mt-8 mb-4 border-b border-white/10 pb-2" />
+    <h1
+      {...props}
+      className="text-4xl font-bold mt-8 mb-4 border-b border-white/10 pb-2"
+    />
   ),
 
   // Custom <h2> for MDX "## Subtitle"
   h2: (props) => (
-    <h2 {...props} className="text-3xl font-bold mt-8 mb-4 border-b border-white/10 pb-2" />
+    <h2
+      {...props}
+      className="text-3xl font-bold mt-8 mb-4 border-b border-white/10 pb-2"
+    />
   ),
 
-  h3: (props) => (
-    <h3 {...props} className="text-2xl font-bold mt-6 mb-3" />
-  ),
-  h4: (props) => (
-    <h4 {...props} className="text-xl font-bold mt-4 mb-2" />
-  ),
+  h3: (props) => <h3 {...props} className="text-2xl font-bold mt-6 mb-3" />,
+  h4: (props) => <h4 {...props} className="text-xl font-bold mt-4 mb-2" />,
   // Custom <p> for paragraphs
   p: (props) => (
     <p {...props} className="text-base leading-7 mb-4 text-slate-200" />
@@ -85,9 +87,7 @@ const mdxComponents: MDXRemoteProps["components"] = {
   ),
 
   // List item
-  li: (props) => (
-    <li {...props} className="text-slate-200" />
-  ),
+  li: (props) => <li {...props} className="text-slate-200" />,
 
   // Blockquotes ("> Something")
   blockquote: (props) => (
@@ -111,13 +111,15 @@ const mdxComponents: MDXRemoteProps["components"] = {
     />
   ),
 
-  td: (props) => (
-    <td {...props} className="border border-white/20 px-4 py-2" />
-  ),
+  td: (props) => <td {...props} className="border border-white/20 px-4 py-2" />,
 
   // Images
   img: (props) => (
-    <img {...props} className="rounded-lg my-4 max-w-full h-auto" alt={props.alt as string ?? ""} />
+    <img
+      {...props}
+      className="rounded-lg my-4 max-w-full h-auto"
+      alt={(props.alt as string) ?? ""}
+    />
   ),
 };
 
@@ -139,7 +141,9 @@ export default async function PostPage({
 
       {/* Optional published date */}
       {meta.publishedAt && (
-        <p className="text-gray-400 text-sm mb-8">Published on {meta.publishedAt}</p>
+        <p className="text-gray-400 text-sm mb-8">
+          Published on {meta.publishedAt}
+        </p>
       )}
 
       {/* MDX content rendering */}
